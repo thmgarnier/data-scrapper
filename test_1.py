@@ -1,7 +1,7 @@
 import PyPDF2
 import re
 
-pdfFileObj = open('cv_test.pdf', 'rb')
+pdfFileObj = open('test.pdf', 'rb')
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj, strict=False)
 
 search_word = "Python"
