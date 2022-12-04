@@ -1,0 +1,48 @@
+# Create a Python code for reading pdf files with the PyPDF2 library. The code finds a list of keywords in the pdf and outputs an email found in the file and a list of the keywords of the input that appeared in the file.
+
+# In[1]:
+
+
+import PyPDF2
+import re
+
+# In[2]:
+
+
+# Open the pdf file
+pdfFileObj = open('sample.pdf', 'rb')
+
+# Read the pdf file
+pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+
+# Get the number of pages in the pdf file
+num_pages = pdfReader.numPages
+
+# Get the text from each page
+count = 0
+text = ""
+while count < num_pages:
+    pageObj = pdfReader.getPage(count)
+    count += 1
+    text += pageObj.extractText()
+
+# Close the pdf file
+pdfFileObj.close()
+
+# In[3]:
+
+
+# Find the email address
+email = re.findall(r'[\w\.-]+@[\w\.-]+', text)
+
+# In[4]:
+
+
+# Find the keywords
+keywords = ['python', 'data', 'science', 'machine', 'learning', 'artificial', 'intelligence']
+
+# In[5]:
+
+
+# Find the keywords in the text
+key
