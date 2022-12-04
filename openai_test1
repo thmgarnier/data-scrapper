@@ -45,4 +45,14 @@ keywords = ['python', 'data', 'science', 'machine', 'learning', 'artificial', 'i
 
 
 # Find the keywords in the text
-key
+keywords_found = []
+for keyword in keywords:
+    if keyword in text:
+        keywords_found.append(keyword)
+
+# In[6]:
+
+
+# Print the email and the keywords found
+print('Email:', email)
+print('Keywords found:', keywords_found)
